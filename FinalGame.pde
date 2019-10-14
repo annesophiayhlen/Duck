@@ -1,5 +1,5 @@
 MyDuck d;
-int sizeE = 130;
+
 
 void settings(){
   size(800,1000);
