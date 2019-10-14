@@ -26,7 +26,7 @@ void bounce(){
     //yDirc=1;
     
  if(newX + 43 <= 0 || newX + 165 >= width) xDirc = xDirc*-1;
- if(newY + 2 <= 0 || newY + 182 >= height) yDirc = yDirc*-1;
+ if(newY + 2 <= 0 || newY + 122 >= height) yDirc = yDirc*-1;
 }
 void display(){  
   newW = 1;
