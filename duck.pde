@@ -1,24 +1,36 @@
 class MyDuck {
-  int newX;
-  int newY;
+  float newX;
+  float newY;
   float newW;
+  float yDirc = -1; // y direction
+  float xDirc = -1; // x direction'
+  float speed;  
   int size;
   
- MyDuck(int duckSize, int duckX, int duckY){
+ MyDuck(int duckSize, float speed,float duckX, float duckY){
+  this.speed = speed;
   size = duckSize;
-
-
+  newX = -35* size + duckX; // -550
+  newY = -22* size + duckY; // -160
  }
  
-void duckPos(int duckX, int duckY){
-  
-newX = -35* size + duckX;
-newY = -25* size + duckY;   
+void duckMove(){
+  newX = newX + (speed * xDirc);
+  newY = newY + (speed * yDirc); 
+  println(newX);
  }
  
-void display(){
-  
+void bounce(){
+  //if(yDirc < 0.5 && yDirc > -.5)
+    //yDirc=1;
+    
+ if(newX + 43 <= 0 || newX + 165 >= width) xDirc = xDirc*-1;
+ if(newY + 2 <= 0 || newY + 182 >= height) yDirc = yDirc*-1;
+}
+void display(){  
   newW = 1;
+  fill(0,20);
+  ellipse(newX+35*size,newY+22*size,sizeE,sizeE);
   noStroke();
       //body color
   fill(250,237,92); 
