@@ -5,9 +5,9 @@ class MyDuck {
   float yDirc = -1; // y direction
   float xDirc = -1; // x direction'
   float speed;  
-  int size;
+  float size;
   
- MyDuck(int duckSize, float speed,float duckX, float duckY){
+ MyDuck(float duckSize, float speed,float duckX, float duckY){
   this.speed = speed;
   size = duckSize;
   newX = -35* size + duckX; // -550
