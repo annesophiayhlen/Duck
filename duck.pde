@@ -6,7 +6,8 @@ class MyDuck {
   float xDirc = -1; // x direction'
   float speed;  
   float size;
-  
+  int sizeE = 130; //ellipse size
+
  MyDuck(float duckSize, float speed,float duckX, float duckY){
   this.speed = speed;
   size = duckSize;
