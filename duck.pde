@@ -18,7 +18,6 @@ class MyDuck {
 void duckMove(){
   newX = newX + (speed * xDirc);
   newY = newY + (speed * yDirc); 
-  println(newX);
  }
  
 void bounce(){

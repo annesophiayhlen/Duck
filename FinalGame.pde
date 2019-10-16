@@ -6,7 +6,7 @@ void settings(){
   d = new MyDuck(3,4,500,500);
 }
 void draw(){
-background(255);
+background(#70FCA9);
 d.display();
 d.duckMove();
 d.bounce();
