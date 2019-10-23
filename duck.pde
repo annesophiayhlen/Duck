@@ -1,3 +1,4 @@
+
 class MyDuck {
   float newX;
   float newY;
@@ -31,6 +32,7 @@ void display(){
   newW = 1;
   fill(0,20);
   ellipse(newX+35*size,newY+22*size,sizeE,sizeE);
+  
   noStroke();
       //body color
   fill(250,237,92); 
