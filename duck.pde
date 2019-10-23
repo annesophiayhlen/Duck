@@ -1,12 +1,12 @@
 
 class MyDuck {
-  float newX;
-  float newY;
-  float newW;
+  float newX; //duck's start pos x
+  float newY; //duck's start pos y
+  float newW; //duck's width 
   float yDirc = -1; // y direction
   float xDirc = -1; // x direction'
-  float speed;  
-  float size;
+  float speed;  // speed of the duck
+  float size; // size of the duck
   int sizeE = 130; //ellipse size
 
   MyDuck(float duckSize, float speed, float duckX, float duckY) { 

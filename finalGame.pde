@@ -1,9 +1,9 @@
 MyDuck d;
 MyPaddle p;
-//Left and right keys
-boolean left, right;
-//restart
-boolean reStart = false;
+
+boolean left, right; //Left and right keys
+boolean reStart = false; //restart
+int score = 0; //Score
 
 void setup() {
   size(800, 1000); //800, 1000 org.
@@ -12,12 +12,14 @@ void setup() {
 }
 void draw() {
   background(#70FCA9);
+  score();
   p.display();
   p.move();
   d.display();
   d.duckMove();
   d.bounce();
   gameOver();
+  
 }
 
 void keyPressed() { // moves when key is pressed 
@@ -51,10 +53,18 @@ void gameOver() {
       fill(255, 0, 0);  
       reStart = true;
     }
-     ellipse(400,400,100,100); //draw restart ellipse 
-   //RESTART TEXT
-   fill(0);
-   textSize(20);
-   text("RESTART",400,400);
+    ellipse(400, 400, 100, 100); //draw restart ellipse 
+    //RESTART TEXT
+    fill(0);
+    textSize(20);
+    text("RESTART", 400, 400);
   }
+}
+void score() {
+   //Scoreboard
+ fill(255,0,0);
+ textSize(50);
+ textAlign(CENTER);
+ text(score, 50, 70); 
+
 }

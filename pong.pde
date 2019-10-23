@@ -23,16 +23,24 @@ class MyPaddle {
     }
   }
 
-    void display() {
-      //Rect setup
-      stroke(1);
-      fill(255, 0, 0);
-      rect(x, y, _width, _height);
+ /* void collision() {
+    //Collision/bounce off from rect
+    if (d.newX + (d.sizeE/2) > x && d.newX < x + _width && d.newY + (d.sizeE/2) > y && d.newY < y + _height) {
+      d.speed *= -1;
+      score++;
+    }
+    if (dist(d.newX + (d.sizeE/2), d.newY + (d.sizeE/2), x, y) < x) { //Left side bounce of the paddel
+      d.speed = -d.speed;
     }
   }
-
-
-
+*/
+  void display() {
+    //Rect setup
+    stroke(1);
+    fill(255, 0, 0);
+    rect(x, y, _width, _height);
+  }
+}
 
   /* 
    //Ellipse:
