@@ -1,5 +1,5 @@
-MyDuck d;
-MyPaddle p;
+MyDuck duck;
+MyPaddle paddle;
 
 boolean left, right; //Left and right keys
 boolean reStart = false; //restart
@@ -7,18 +7,21 @@ int score = 0; //Score
 
 void setup() {
   size(800, 1000); //800, 1000 org.
-  d = new MyDuck(3, 4, 500, 500);
-  p = new MyPaddle(width/2, height-25, 100, 25, 5);
+  duck = new MyDuck(3, 1, random(40,width-70), height/2);
+  paddle = new MyPaddle(width/2, height-25, 100, 25, 5);
 }
 void draw() {
   background(#70FCA9);
-  score();
-  p.display();
-  p.move();
-  d.display();
-  d.duckMove();
-  d.bounce();
-  gameOver();
+  score(#C333FC);
+  paddle.display();
+  paddle.move();
+  paddle.collision();
+  paddle.sideCollision();
+  duck.display();
+  duck.duckMove();
+  duck.bounce();
+  
+  gameOver(#D346D1, #F0DAEF, #55EDFF, #FC33E5 ); // gameover text, restart button, restart button 2nd color, restar text
   
 }
 
@@ -40,29 +43,29 @@ void keyReleased() { // stops when key is released
   }
 }
 
-void gameOver() {
+void gameOver(color gameText, color restartButton, color restartButtonSec, color restartText) {
   //GAMER OVER TEXT 
-  if (d.newY > height + d.sizeE/2) {
-    fill(255, 0, 0);
+  if (duck.newY > height + duck.sizeE/2) {
+    fill(int(gameText));
     textSize(100);
     textAlign(CENTER);
     text("GAME OVER", width/2, height/3);
     //RESTART button
-    fill(255, 255, 255); 
-    if (dist(mouseX, mouseY, 400, 400) < 50) { // detection for restart button
-      fill(255, 0, 0);  
+    fill(int(restartButton)); 
+    if (dist(mouseX, mouseY, width/2, height/2) < 50) { // detection for restart button
+      fill(int(restartButtonSec));
       reStart = true;
     }
-    ellipse(400, 400, 100, 100); //draw restart ellipse 
+    ellipse(width/2, height/2, 100, 100); //draw restart ellipse 
     //RESTART TEXT
-    fill(0);
-    textSize(20);
-    text("RESTART", 400, 400);
+    fill(int(restartText));
+    textSize(19);
+    text("RESTART", width/2, height/2);
   }
 }
-void score() {
+void score(color scoreText) {
    //Scoreboard
- fill(255,0,0);
+ fill(int(scoreText));
  textSize(50);
  textAlign(CENTER);
  text(score, 50, 70); 

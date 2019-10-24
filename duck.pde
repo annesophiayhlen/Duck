@@ -12,8 +12,8 @@ class MyDuck {
   MyDuck(float duckSize, float speed, float duckX, float duckY) { 
     this.speed = speed;
     size = duckSize;
-    newX = -35* size + duckX; // -550
-    newY = -22* size + duckY; // -160
+    newX = -35* size + duckX; // 395
+    newY = -22* size + duckY; // 264
   }
 
   void duckMove() {
@@ -22,18 +22,16 @@ class MyDuck {
   }
 
   void bounce() {
-    //if(yDirc < 0.5 && yDirc > -.5)
-    //yDirc=1;
-
     if (newX + 43 <= 0 || newX + 165 >= width) xDirc = xDirc*-1;
     if (newY + 2 <= 0) yDirc = yDirc*-1;
   }
+  
   void display() {  
     noStroke();
     newW = 1;
     fill(0, 20);
-    ellipse(newX+35*size, newY+22*size, sizeE, sizeE);
-
+    ellipse(newX+35*size, newY+22*size, sizeE, sizeE); // 395,264,130,130
+    
     noStroke();
     //body color
     fill(250, 237, 92); 
